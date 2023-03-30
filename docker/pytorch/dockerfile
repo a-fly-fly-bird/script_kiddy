@@ -15,7 +15,7 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.cqu.edu.cn/g' /etc/apt/sources.list \
     && echo "index-url = https://mirrors.cqu.edu.cn/pypi/web/simple" >> ~/.pip/pip.conf
     # && pip config set global.index-url https://mirrors.cqu.edu.cn/pypi/web/simple
 
-VOLUME [ "/root/share" ]
+VOLUME [ "/workspace" ]
 
 EXPOSE 8888
 
