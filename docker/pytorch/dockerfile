@@ -19,5 +19,5 @@ VOLUME [ "/root/share" ]
 
 EXPOSE 8888
 
-CMD echo $HOME
-
+# 不要加这个，运行完主进程镜像就会结束退出
+# CMD echo $HOME

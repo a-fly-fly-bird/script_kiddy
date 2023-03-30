@@ -1,3 +1,4 @@
+# 配置加速
 要想在docker中使用nvidia显卡加速，还需要安装NVIDIA Container Toolkit。
 
 参考[NVIDIA Container Toolkit的Github主页](https://github.com/NVIDIA/nvidia-docker)。
@@ -16,5 +17,13 @@ sudo apt-get install -y nvidia-container-toolkit
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 # a working setup can be tested by running a base CUDA container
+sudo docker run --rm --runtime=nvidia --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
+```
+
+# 启动容器
+需要加入如下参数`--runtime=nvidia --gpus all`启用加速。
+
+eg.
+```sh
 sudo docker run --rm --runtime=nvidia --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
 ```
