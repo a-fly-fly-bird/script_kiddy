@@ -197,9 +197,16 @@ sudo ubuntu-drivers install
 | 11.6     | 1.13.1，1.13.0，1.12.1 |
 
 ## RuntimeError: CUDA error: no kernel image is available for execution on the device
-
+### 版本不匹配
 这次安装的时候还遇到过一个新问题：[RuntimeError: CUDA error: no kernel image is available for execution on the device](https://forums.developer.nvidia.com/t/runtimeerror-cuda-error-no-kernel-image-is-available-for-execution-on-the-device/167708)
 
 总而言之就是安装的cuda, pytorch和当前的GPU型号，驱动并不匹配。参考上面的笔记解决即可。
 
 其实最主要的就是**CUDA Toolkit (PyTorch)中CUDA的版本不能过高或者过低，过低，Driver不支持，过高，PyTorch不支持**。
+
+### 算力不匹配
+**或者是cuda或pytorch 与显卡算力不区配。**
+
+参考：https://blog.csdn.net/weixin_42642296/article/details/115598760
+
+解决方案：调整安装版本。
