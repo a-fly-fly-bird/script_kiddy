@@ -1,5 +1,6 @@
 # 注意：先参考README配置NVIDIA Container Toolkit
-FROM pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
+# FROM pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
+FROM pytorch/pytorch:1.12.1-cuda11.3-cudnn8-devel
 
 # 换源
 RUN sed -i 's/archive.ubuntu.com/mirrors.cqu.edu.cn/g' /etc/apt/sources.list \
